@@ -1,8 +1,10 @@
 // ...existing code...
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-import { NgForOf } from "../../node_modules/@angular/common/types/_common_module-chunk";
+
+
 
 export interface Todoitem{
   id: number,
@@ -13,7 +15,7 @@ export interface Todoitem{
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, NgForOf],
+  imports: [RouterOutlet, FormsModule, NgClass],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
@@ -33,8 +35,11 @@ export class App {
       this.Newtask = ''
     }
   }
-} 
-
+  togglecompleted(index: number):void {
+    this.Todolist[index].completed =!this.Todolist[index].completed;
+    
+  } 
+}
 
 
 // ...existing code...

@@ -4,24 +4,32 @@
 </style>
 
 <main class="todo-container">
- <div class="title">
-  <h1> <i class="bi bi-journal-check"></i> Lista de tarefas</h1>
- </div> 
+  <div class="title">
+    <h1><i class="bi bi-journal-check"></i> Lista de tarefas</h1>
+  </div>
 
- <div class="add-task"> 
-    <input [(ngModel)]="Newtask" placeholder="Nova tarefa"/>
-    <button (click)="addTask()"><i class="bi bi-plus-circle"></i></button>
- </div>
+  <div class="add-task">
+    <input [(ngModel)]="Newtask" placeholder="Nova tarefa" />
+    <button (click)="addTask()">
+      <i class="bi bi-plus-circle"></i>
+    </button>
+  </div>
 
- <div>
-    <ul class="Task-list">
-        <li *ngFor="">
-
-        </li>
-    </ul>
- </div>
+  <div>
+  <ul class="Task-list">
+    @for (todoItem of Todolist; track todoItem.id ;let i = "index" [Ngclass]=({'completed': todoItem.completed})) {
+      <li>
+        <input type="checkbox">
+        <span>{{ todoItem.task }}</span>
+        <button> <i class="bi bi-trash"> </i> </button>
+      </li>
+    }
+  </ul>
+</div>
 
 </main>
+
+
 
 
 <router-outlet />
