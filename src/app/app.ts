@@ -39,6 +39,10 @@ export class App {
     this.Todolist[index].completed =!this.Todolist[index].completed;
     
   } 
+
+  deletetask(index:number):void {
+    this.Todolist = this.Todolist.filter((_, i) => i !== index);
+  }
 }
 
 
