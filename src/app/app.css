@@ -62,7 +62,7 @@
     align-items: center;
     padding: 10px;
     margin-bottom: 10px;
-    background-color:#ffff
+    background-color:#ffff;
     border-radius: 4px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
@@ -80,4 +80,8 @@
     border-radius: 4px;
     cursor: pointer;
 
+}
+.completed {
+  text-decoration: line-through;
+  color: #888;
 }

@@ -1,7 +1,4 @@
 
-<style>
-
-</style>
 
 <main class="todo-container">
   <div class="title">
@@ -19,9 +16,10 @@
   <ul class="Task-list">
     @for (todoItem of Todolist; track todoItem.id; let i = $index) {
       <li [ngClass]="{'completed': todoItem.completed}">
-        <input type="checkbox" [checked]="todoItem.completed" (change)="togglecompleted(i)">
+        <input type="checkbox" [checked]="todoItem.completed" (change)="toggleCompleted(todoItem.id)">
         <span [ngClass]="{'completed': todoItem.completed}">{{ todoItem.task }}</span>
         <button (click)="deletetask(todoItem.id)"><i class="bi bi-trash"></i> </button>
+            
       </li>
     }
   </ul>

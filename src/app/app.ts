@@ -35,15 +35,17 @@ export class App {
       this.Newtask = ''
     }
   }
-  togglecompleted(index: number):void {
-    this.Todolist[index].completed =!this.Todolist[index].completed;
-    
-  } 
+  toggleCompleted(id: number): void {
+  this.Todolist = this.Todolist.map(todo =>
+    todo.id === id ? { ...todo, completed: !todo.completed } : todo
+  );
+}
 
-  deletetask(index:number):void {
-    this.Todolist = this.Todolist.filter((_, i) => i !== index);
-    console.log(this.Todolist);
-  }
+
+  deletetask(id: number): void {
+  this.Todolist = this.Todolist.filter(item => item.id !== id);
+}
+
 }
 
 
